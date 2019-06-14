@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<MscDiagram message_params_visibility="full">
+<LifelineOrdering identifiers="LIFELINEID_1 LIFELINEID_2 LIFELINEID_3"/>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="PROCESS_START" color="#000000" text="ClientEmetteur
+(1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="PROCESS_START" color="#000000" text="RTDS_Env
+(-1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="PROCESS_START" color="#000000" text="ClientRecepteur
+(2)" text_size="0 -" background="-"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientEmetteur.rdd*SYM3" identifier="COND1" background="-" text="Ready"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="#000000" text="Ready" identifier="COND1" model_id="PragmaDevStudio:symbol*/data/ClientEmetteur.rdd*SYM3"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="#000000" text="StartMsg(|{param1|=0|})" identifier="MSG1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientRecepteur.rdd*SYM2" identifier="COND2" background="-" text="Ready"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="#000000" text="Ready" identifier="COND2" model_id="PragmaDevStudio:symbol*/data/ClientRecepteur.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientEmetteur.rdd*SYM5" identifier="MSG1" text="StartMsg(|{param1|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientEmetteur.rdd*SYM6" identifier="MSG2" text="SYN(|{param1|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="CONDITION_START" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientEmetteur.rdd*SYM7" identifier="COND3" background="-" text="EndE"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="#000000" text="EndE" identifier="COND3" model_id="PragmaDevStudio:symbol*/data/ClientEmetteur.rdd*SYM7"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientRecepteur.rdd*SYM4" identifier="MSG2" text="SYN(|{param1|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientRecepteur.rdd*SYM5" identifier="MSG3" text="ACK(|{param1|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="#000000" model_id="PragmaDevStudio:symbol*/data/ClientRecepteur.rdd*SYM6" identifier="COND4" background="-" text="EndR"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="#000000" text="EndR" identifier="COND4" model_id="PragmaDevStudio:symbol*/data/ClientRecepteur.rdd*SYM6"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_RECEIVE" color="#000000" text="ACK(|{param1|=0|})" identifier="MSG3"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+</MscDiagram>

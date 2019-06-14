@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<Diagram language="sdl" type="sys" defaultColorsNeedFixing="FALSE" name="protocol" showMsgData="full" linksCrossingAllowed="FALSE" cellWidthMm="4">
+
+<DiagramPartition name="Part. 0" nbPagesH="1" nbPagesV="1">
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="0.0" bottomMargin="0.0" leftMargin="0.0" rightMargin="0.0" pageFooter="FALSE" scaleFactor="1.0"/>
+
+<Symbol symbolId="SYMB1" type="sdlSysDgmFrm" xCenter="297" yCenter="420" fixedDimensions="TRUE" width="551" height="775" color="-" fillColor="-">
+<Description></Description>
+<Text></Text>
+
+<Symbol symbolId="SYMB3" type="sdlText" xCenter="209" yCenter="253" fixedDimensions="FALSE" width="286" height="88" color="#000000" fillColor="#FFFFFF">
+<Description></Description>
+<Text>/* Définition des fonctions */
+signal StartMsg(Integer);
+signal SYN(Integer);
+signal ACK(Integer);
+</Text>
+</Symbol>
+</Symbol>
+</DiagramPartition>
+
+<DiagramPartition name="Part. 1" nbPagesH="1" nbPagesV="1">
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="0.0" bottomMargin="0.0" leftMargin="0.0" rightMargin="0.0" pageFooter="FALSE" scaleFactor="1.0"/>
+
+<Symbol symbolId="SYMB4" type="sdlSysDgmFrm" xCenter="297" yCenter="420" fixedDimensions="TRUE" width="551" height="775" color="-" fillColor="-">
+<Description></Description>
+<Text></Text>
+
+<Symbol symbolId="SYMB8" type="sdlBlk" xCenter="231" yCenter="110" fixedDimensions="FALSE" width="88" height="44" color="#000000" fillColor="#C4EFED">
+<Description></Description>
+<Text>Emetteur
+</Text>
+</Symbol>
+
+<Symbol symbolId="SYMB9" type="sdlBlk" xCenter="231" yCenter="297" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
+<Description></Description>
+<Text>Recepteur
+</Text>
+</Symbol>
+</Symbol>
+
+<Link linkId="LINK20" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>cStart
+</Text>
+<Connector attachedSymbolId="SYMB4" type="chnl" isOutside="FALSE" side="w" position="-0.714838709677" endType="midarrow">
+<Text id="1">[]</Text>
+<Text id="2"></Text>
+</Connector>
+<Connector attachedSymbolId="SYMB8" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
+<Text id="1">[StartMsg]
+</Text>
+<Text id="2"></Text>
+</Connector>
+<LinkSegment orientation="h" length="231"/>
+
+</Link>
+
+<Link linkId="LINK22" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>cInternal
+</Text>
+<Connector attachedSymbolId="SYMB9" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
+<Text id="1">[SYN]
+</Text>
+<Text id="2"></Text>
+</Connector>
+<Connector attachedSymbolId="SYMB8" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
+<Text id="1">[ACK]
+</Text>
+<Text id="2"></Text>
+</Connector>
+<LinkSegment orientation="v" length="-187"/>
+
+</Link>
+</DiagramPartition>
+
+</Diagram>
