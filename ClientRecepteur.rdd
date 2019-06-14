@@ -4,7 +4,8 @@
 
 <SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
 <SdlFSMPartition name="" needs_cleanup="FALSE">
-<SdlFSMSymbol identifier="SYM7" type="sdlText" text="dcl nmSeq Integer;" outline_color="-" background_color="-" center_coordinates="113 73" dimensions="164 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM7" type="sdlText" text="dcl nmSeq Integer;
+dcl counter Integer;" outline_color="-" background_color="-" center_coordinates="120 81" dimensions="160 50" attached_symbol_id=""/>
 <NonStateTransition top_left_coordinates="190 161">
 <SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="220 176" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
@@ -12,12 +13,28 @@
 </Transition>
 </NonStateTransition>
 <StateTransitionBlock top_left_coordinates="314 209">
-<SdlFSMSymbol identifier="SYM3" type="sdlState" text="Ready, EndE" outline_color="-" background_color="-" center_coordinates="368 229" dimensions="108 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM3" type="sdlState" text="Ready, EndE" outline_color="-" background_color="-" center_coordinates="397 229" dimensions="96 40" attached_symbol_id=""/>
 <NormalStateTransition>
-<SdlFSMSymbol identifier="SYM4" type="sdlInputSig" text="SYN(nmSeq)" outline_color="-" background_color="-" center_coordinates="368 281" dimensions="100 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM4" type="sdlInputSig" text="SYN(nmSeq,counter)" outline_color="-" background_color="-" center_coordinates="397 281" dimensions="146 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM5" type="sdlSendSig" text="ACK(nmSeq)" outline_color="-" background_color="-" center_coordinates="368 333" dimensions="100 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM6" type="sdlState" text="EndR" outline_color="-" background_color="-" center_coordinates="368 385" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM19" type="sdlTask" text="counter := counter -1" outline_color="-" background_color="-" center_coordinates="397 333" dimensions="166 40" attached_symbol_id=""/>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM20" type="sdlDecision" text="counter &gt;= 0" outline_color="-" background_color="-" center_coordinates="397 385" dimensions="104 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM21" type="sdlAnswer" text="True" outline_color="-" background_color="-" center_coordinates="397 437" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM23" type="sdlSendSig" text="ACK(nmSeq)" outline_color="-" background_color="-" center_coordinates="397 489" dimensions="90 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM26" type="sdlTask" text="nmSeq := nmSeq + 1" outline_color="-" background_color="-" center_coordinates="397 541" dimensions="146 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM24" type="sdlState" text="EndE" outline_color="-" background_color="-" center_coordinates="397 593" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM22" type="sdlAnswer" text="False" outline_color="-" background_color="-" center_coordinates="510 437" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM25" type="sdlState" text="EndR" outline_color="-" background_color="-" center_coordinates="510 489" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
 </Transition>
 </NormalStateTransition>
 </StateTransitionBlock>

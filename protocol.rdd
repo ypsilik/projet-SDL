@@ -11,11 +11,11 @@
 <Description></Description>
 <Text></Text>
 
-<Symbol symbolId="SYMB3" type="sdlText" xCenter="209" yCenter="253" fixedDimensions="FALSE" width="286" height="88" color="#000000" fillColor="#FFFFFF">
+<Symbol symbolId="SYMB3" type="sdlText" xCenter="220" yCenter="253" fixedDimensions="FALSE" width="264" height="88" color="#000000" fillColor="#FFFFFF">
 <Description></Description>
 <Text>/* Définition des fonctions */
-signal StartMsg(Integer);
-signal SYN(Integer);
+signal StartMsg(Integer,Integer);
+signal SYN(Integer,Integer);
 signal ACK(Integer);
 </Text>
 </Symbol>
@@ -31,20 +31,17 @@ signal ACK(Integer);
 
 <Symbol symbolId="SYMB8" type="sdlBlk" xCenter="231" yCenter="110" fixedDimensions="FALSE" width="88" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>Emetteur
-</Text>
+<Text>Emetteur</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB9" type="sdlBlk" xCenter="231" yCenter="297" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB9" type="sdlBlk" xCenter="231" yCenter="297" fixedDimensions="FALSE" width="88" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>Recepteur
-</Text>
+<Text>Recepteur</Text>
 </Symbol>
 </Symbol>
 
 <Link linkId="LINK20" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cStart
-</Text>
+<Text>cStart</Text>
 <Connector attachedSymbolId="SYMB4" type="chnl" isOutside="FALSE" side="w" position="-0.714838709677" endType="midarrow">
 <Text id="1">[]</Text>
 <Text id="2"></Text>
@@ -59,8 +56,7 @@ signal ACK(Integer);
 </Link>
 
 <Link linkId="LINK22" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cInternal
-</Text>
+<Text>cInternal</Text>
 <Connector attachedSymbolId="SYMB9" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
 <Text id="1">[SYN]
 </Text>
